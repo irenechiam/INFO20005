@@ -13,7 +13,8 @@ body {
 h1 {
     font-family: "Archivo Black", sans-serif;
     color: white;
-    font-size: 80px;
+    font-size: 60px;
+    text-align: center;
 }
 
 h2 {
@@ -25,7 +26,7 @@ h2 {
 h3 {
     font-family: "Archivo Black", sans-serif;
     color: white;
-    font-size: 25px;
+    font-size: 28px;
 }
 
 ul {
@@ -45,11 +46,101 @@ li {
     padding-right: 15px;
 }
 
-img {
-    width: 38px;
+.menu_btn {   
+    width: 40px;
+}
+
+.brand_img {
+    display: block;
+    width: 45%;
+    height: auto;
+    margin: 250px auto 250px auto;
 }
 
 a {
     color: white;
     text-decoration: none;
+}
+
+.intro_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 3fr 1fr 2fr;
+    margin: 50px 0;
+}
+
+.pinball_machine {
+    grid-column: 2 / span 2;
+    grid-row: 1;
+    margin: 0px auto;
+}
+
+.close_up_img {
+    grid-column: 2;
+    grid-row: 2;
+    margin-left: 44%;
+}
+
+.intro_text {
+    grid-column: 3;
+    grid-row: 2;
+    margin: 7px 100px 0 0;
+}
+
+.kangaroo_img {
+    grid-column: 2 / span 2;
+    grid-row: 3;
+    margin: 0px auto;
+}
+
+.about_us_grid {
+    display: grid;
+    justify-content: center;
+    margin: 50px 0;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.about_us_img {
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 3;
+}
+
+.primary_text {
+    grid-column: 2;
+    grid-row: 1;
+    margin-right: 50%;
+    text-align: center;
+}
+
+.secondary_text {
+    grid-column: 2;
+    grid-row: 3;
+    margin-right: 50%;
+    text-align: center;
+}
+
+.image_container {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+}
+
+.product_img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.product_text {
+    position: absolute;
+    text-align: left;
+    top: 80%;
+    left: 35%;
+    margin: 0 35% 0 0;
+}
+
+.shop_btn {
+    text-align: center;
+
 }
