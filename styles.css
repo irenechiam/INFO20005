@@ -107,10 +107,16 @@ a {
     grid-template-rows: 1fr 1fr;
 }
 
-.about_us_img {
+.about_us_arrows {
     grid-column: 2;
     grid-row: 1 / span 3;
-    width: 100%;
+}
+
+.about_us_founders {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    width: 50%;
+    align;
 }
 
 .primary_text {
