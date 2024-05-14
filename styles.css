@@ -214,3 +214,22 @@ footer {
     align-items: center;
     margin: 100px 30px 10px 30px;
 }
+
+
+
+
+
+.product_page_container {
+    padding: 2rem;
+}
+
+.slider_wrapper { 
+    position: relative;
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.slider {
+    display: flex;
+}
+
