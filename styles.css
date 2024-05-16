@@ -218,7 +218,7 @@ footer {
 
 .product_page_container { 
     width: 60%;
-    margin: 10px 10px;
+    margin: 10px auto;
     position: relative;
 }
 
