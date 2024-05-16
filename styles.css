@@ -216,20 +216,52 @@ footer {
 }
 
 
-
-
-
-.product_page_container {
-    padding: 2rem;
-}
-
-.slider_wrapper { 
+.product_page_container { 
+    width: 60%;
+    margin: 10px 10px;
     position: relative;
-    max-width: 48rem;
-    margin: 0 auto;
 }
 
-.slider {
+.carousel { 
+    border: 2px solid #ccc;
+    height: 700px;
+    width: 80%;
+    position: relative;
+}
+
+.slider { 
+    height: 100%;
     display: flex;
+    width: 300%;
+    border: 1px solid red;
+   
 }
 
+.slider section {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    transform: translateY(-50%); 
+    cursor: pointer;
+    color: #ccc;
+}
+
+.arrow_left, .arrow_right {
+    position: absolute;
+}
+
+.arrow_left {
+    left:10px;
+}
+
+.arrow_right {
+    right:10px;
+}
