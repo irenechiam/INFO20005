@@ -217,7 +217,7 @@ footer {
 
 
 .product_page_container { 
-    width: 60%;
+    width: 90%;
     margin: 10px auto;
     position: relative;
 }
@@ -227,6 +227,7 @@ footer {
     height: 700px;
     width: 80%;
     position: relative;
+    overflow: hidden;
 }
 
 .slider { 
@@ -257,6 +258,8 @@ footer {
 
 .arrow_left, .arrow_right {
     position: absolute;
+    scale: 60%;
+    transform: translatey(-50%);
 }
 
 .arrow_left {
@@ -267,6 +270,22 @@ footer {
     right:10px;
 }
 
+.controls ul { 
+    position: absolute;
+    bottom: 20px;
+    color: #ccc;
+    list-style: none;
+    left: 50%;
+    transform: translateY(-50%);
+   
+}
+
+.controls ul li { 
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+}
 .beast_name {
     margin: 35px 0 0 0;
 }
