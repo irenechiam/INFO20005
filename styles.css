@@ -240,6 +240,7 @@ footer {
 .slider section {
     flex-basis: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -264,4 +265,8 @@ footer {
 
 .arrow_right {
     right:10px;
+}
+
+.beast_name {
+    margin: 35px 0 0 0;
 }
