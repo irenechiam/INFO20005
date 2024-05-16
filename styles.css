@@ -254,7 +254,7 @@ footer {
     color: #ccc;
 }
 
-.arrow_left, .arrow_right {
+.arrow_left, #arrow_right {
     position: absolute;
 }
 
@@ -262,6 +262,6 @@ footer {
     left:10px;
 }
 
-.arrow_right {
+#arrow_right {
     right:10px;
 }
