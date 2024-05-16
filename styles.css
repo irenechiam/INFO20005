@@ -44,7 +44,7 @@ ul {
     margin: 0.5rem;
     color: white;
     list-style-type: none;
-    font-size: 40px;
+    padding-left: 0;
 }
 
 li {
@@ -269,4 +269,14 @@ footer {
 
 .beast_name {
     margin: 35px 0 0 0;
+}
+
+.back_btn {
+    margin-right: auto;
+}
+
+.back_btn a {
+    padding: 0.5rem 1rem;
+    border: 1px solid white;
+    border-radius: 10px;
 }
