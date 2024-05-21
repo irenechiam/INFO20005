@@ -31,3 +31,38 @@ document.addEventListener('DOMContentLoaded', function() {
 */ 
 
 
+let slider = document.querySelector('.slider'); 
+let slides = Array.from(slider.children); 
+let nextButton = document.querySelector('.right_arrow');
+let prevButton = document.querySelector('.left_arrow');
+let dotsNav = document.querySelector('.carousel_nav'); 
+let dots = Array.from(dotsNav.children);
+let slideWidth = slides[0].getBoundingClientRect().width; 
+
+
+function setSlidePosition(slide, index) { 
+    slide.style.left = slideWidth * index + 'px'; 
+}
+
+function moveToSlide (slider, current_slide, targetSlide) { 
+    slider.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+    current_slide.classList.remove('current_slide'); 
+    targetSlide.classList.add('current_slide'); 
+}
+
+
+slides.forEach(setSlidePosition); 
+
+nextButton.addEventListener('click', function() {
+    let currentSlide = slider.querySelector('.current_slide'); 
+    let nextSlide = currentSlide.nextElementSibling; 
+
+    moveToSlide(slider, currentSlide, nextSlide); 
+}); 
+
+prevButton.addEventListener('click', function() { 
+    let currentSlide = slider.querySelector('.current_slide'); 
+    let prevSlide = currentSlide.previousElementSibling; 
+    
+    moveToSlide(slider, currentSlide, prevSlide); 
+})

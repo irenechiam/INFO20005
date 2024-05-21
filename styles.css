@@ -319,13 +319,16 @@ footer {
 .slider_container{ 
     height: 100%;
     position: relative;
+    overflow: hidden;
 }
 
 .slider { 
-    background: blue;
     padding: 0;
     margin: 0;
     list-style: none;
+    position: relative;
+    height: 100%;
+    transition: 250ms ease-in ;
 }
 
 .slide { 
@@ -389,69 +392,4 @@ footer {
     margin: auto;
 }
 
-.carousel_image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
-.slider_container{ 
-    height: 100%;
-    position: relative;
-}
-
-.slider { 
-    background: blue;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-.slide { 
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-}
-
-.button { 
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background:transparent;
-    border: 0;
-    cursor: pointer;
-}
-
-.left_arrow { 
-    left: -40px;
-}
-
-.right_arrow{
-    right: -40px;
-}
-
-.arrows_img { 
-    width: 20px;
-}
-
-.carousel_nav { 
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
-}
-
-.indicator { 
-    border: 0;
-    border-radius: 50%;
-    width: 15px;
-    height: 15px;
-    background: rgba(255, 255, 255, 0.3);
-    margin: 0 12px;
-}
-
-.back_btn a {
-    padding: 0.5rem 1rem;
-    border: 1px solid white;
-    border-radius: 10px;
-}
