@@ -216,7 +216,7 @@ footer {
 }
 
 
-.product_page_container { 
+/* .product_page_container { 
     width: 90%;
     margin: 10px auto;
     position: relative;
@@ -228,6 +228,8 @@ footer {
     width: 80%;
     position: relative;
     overflow: hidden;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 .slider { 
@@ -248,12 +250,10 @@ footer {
 
 .controls {
     position: absolute;
-    top: 50%;
     width: 100%;
     display: flex;
-    transform: translateY(-50%); 
+
     cursor: pointer;
-    color: #ccc;
 }
 
 .arrow_left, .arrow_right {
@@ -270,22 +270,107 @@ footer {
     right:10px;
 }
 
+.controls .indicators { 
+    position: absolute;
+   transform: translateY(-10%);
+}
+
 .controls ul { 
     position: absolute;
-    bottom: 20px;
-    color: #ccc;
     list-style: none;
+    bottom: 1px;
     left: 50%;
-    transform: translateY(-50%);
+    transform: translate(-50%);
+    padding: 0;
+    margin: 0;
    
 }
 
 .controls ul li { 
-    width: 20px;
+    width: 5px;
     height: 20px;
-    border: 2px solid #ccc;
-    border-radius: 50%;
+    border-radius: 50px;
+    margin: 10px;
+    background: #333;
+    cursor: pointer; 
 }
-.beast_name {
+
+.controls ul li.selected { 
+    background:#ccc ;
+} */
+
+/* .beast_name {
     margin: 35px 0 0 0;
+} */
+
+.carousel { 
+    position: relative;
+    width: 80%;
+    height: 600px;
+    margin: auto;
+}
+
+.carousel_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider_container{ 
+    height: 100%;
+    position: relative;
+}
+
+.slider { 
+    background: blue;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.slide { 
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.button { 
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background:transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.left_arrow { 
+    left: -40px;
+}
+
+.right_arrow{
+    right: -40px;
+}
+
+.arrows_img { 
+    width: 20px;
+}
+
+.carousel_nav { 
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.indicator { 
+    border: 0;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: rgba(255, 255, 255, 0.3);
+    margin: 0 12px;
+}
+
+.indicator.current_slide { 
+    background: rgba(255,255,255,0.7);
 }
