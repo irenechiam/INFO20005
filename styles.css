@@ -136,6 +136,9 @@ a {
     margin-left: 3px;
     align-self: flex-end;
     text-align: center;
+    padding: 10px 4px;
+    border: 1px solid white;
+    border-radius: 10px;
 }
 
 .product_title {
@@ -165,6 +168,13 @@ a {
 .shop_btn {
     text-align: center;
     margin: 0 0 50px 0;
+    border-radius: 10px;
+}
+
+.shop_btn a{
+    padding: 10px 10px;
+    border: 1px solid white;
+    border-radius: 10px;
 }
 
 .distributors_container {
@@ -198,6 +208,9 @@ a {
 .distributors_btn {
     text-align: center;
     margin: 0 40% 50px 40%;
+    padding: 10px 10px;
+    border: 1px solid white;
+    border-radius: 10px;
 }
 
 .support_title {
@@ -206,6 +219,12 @@ a {
 
 .contact_btn {
     text-align: center;
+}
+
+.contact_btn a{
+    padding: 10px 10px;
+    border: 1px solid white;
+    border-radius: 10px;
 }
 
 footer {
@@ -252,7 +271,6 @@ footer {
     position: absolute;
     width: 100%;
     display: flex;
-
     cursor: pointer;
 }
 
