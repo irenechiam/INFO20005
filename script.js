@@ -55,6 +55,21 @@ function updateDots (currentDot, targetDot) {
     targetDot.classList.add('current_slide'); 
 }
 
+function arrowVisibility (slides, prevButton, nextButton, targetIndex) { 
+    if (targetIndex === 0) { 
+        prevButton.classList.add('is_hidden'); 
+        nextButton.classList.remove('is_hidden'); 
+    } else if (targetIndex === slides.length -1) { 
+        prevButton.classList.remove('is_hidden'); 
+        nextButton.classList.add('is_hidden'); 
+    } else { 
+        prevButton.classList.remove('is_hidden'); 
+        nextButton.classList.remove('is_hidden'); 
+    }
+    
+}
+
+
 slides.forEach(setSlidePosition); 
 
 nextButton.addEventListener('click', function() {
@@ -62,9 +77,11 @@ nextButton.addEventListener('click', function() {
     let nextSlide = currentSlide.nextElementSibling; 
     let currentDot = dotsNav.querySelector('.current_slide'); 
     let nextDot = currentDot.nextElementSibling;
+    let nextIndex = slides.findIndex(slide => slide === nextSlide); 
 
     moveToSlide(slider, currentSlide, nextSlide); 
     updateDots(currentDot, nextDot); 
+    arrowVisibility (slides, prevButton, nextButton, nextIndex);
 }); 
 
 prevButton.addEventListener('click', function() { 
@@ -72,9 +89,11 @@ prevButton.addEventListener('click', function() {
     let prevSlide = currentSlide.previousElementSibling; 
     let currentDot = dotsNav.querySelector('.current_slide'); 
     let prevDot = currentDot.previousElementSibling;
+    let prevIndex = slides.findIndex(slide => slide === prevSlide); 
     
     moveToSlide(slider, currentSlide, prevSlide); 
     updateDots(currentDot, prevDot);
+    arrowVisibility (slides, prevButton, nextButton, prevIndex);
 })
 
 dotsNav.addEventListener('click', e => { 
@@ -89,6 +108,6 @@ dotsNav.addEventListener('click', e => {
 
     moveToSlide(slider, currentSlide, targetSlide);
     updateDots(currentDot, targetDot); 
-
+    arrowVisibility (slides, prevButton, nextButton, targetIndex);
 
 })

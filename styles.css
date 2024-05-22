@@ -381,7 +381,6 @@ footer {
     display: flex;
     justify-content: center;
     padding: 10px 0;
-    background-color: blueviolet;
 }
 
 .indicator { 
@@ -398,9 +397,14 @@ footer {
     background: rgba(255,255,255,0.7);
 } 
 
+.is_hidden { 
+    display: none;
+}
+
 .back_btn {
     margin-right: auto;
 }
 .beast_name {
     margin: 35px 0 0 0;
 } 
+
