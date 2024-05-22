@@ -50,19 +50,45 @@ function moveToSlide (slider, current_slide, targetSlide) {
     targetSlide.classList.add('current_slide'); 
 }
 
+function updateDots (currentDot, targetDot) { 
+    currentDot.classList.remove('current_slide'); 
+    targetDot.classList.add('current_slide'); 
+}
 
 slides.forEach(setSlidePosition); 
 
 nextButton.addEventListener('click', function() {
     let currentSlide = slider.querySelector('.current_slide'); 
     let nextSlide = currentSlide.nextElementSibling; 
+    let currentDot = dotsNav.querySelector('.current_slide'); 
+    let nextDot = currentDot.nextElementSibling;
 
     moveToSlide(slider, currentSlide, nextSlide); 
+    updateDots(currentDot, nextDot); 
 }); 
 
 prevButton.addEventListener('click', function() { 
     let currentSlide = slider.querySelector('.current_slide'); 
     let prevSlide = currentSlide.previousElementSibling; 
+    let currentDot = dotsNav.querySelector('.current_slide'); 
+    let prevDot = currentDot.previousElementSibling;
     
     moveToSlide(slider, currentSlide, prevSlide); 
+    updateDots(currentDot, prevDot);
+})
+
+dotsNav.addEventListener('click', e => { 
+    let targetDot = e.target.closest('button'); 
+    
+    if (!targetDot) return; 
+
+    let currentSlide = slider.querySelector('.current_slide'); 
+    let currentDot = dotsNav.querySelector('.current_slide'); 
+    let targetIndex = dots.findIndex(dot => dot === targetDot);
+    let targetSlide = slides[targetIndex]; 
+
+    moveToSlide(slider, currentSlide, targetSlide);
+    updateDots(currentDot, targetDot); 
+
+
 })

@@ -363,6 +363,7 @@ footer {
     display: flex;
     justify-content: center;
     padding: 10px 0;
+    background-color: blueviolet;
 }
 
 .indicator { 
@@ -372,6 +373,7 @@ footer {
     height: 15px;
     background: rgba(255, 255, 255, 0.3);
     margin: 0 12px;
+    cursor: pointer;
 }
 
 .indicator.current_slide { 
@@ -385,11 +387,6 @@ footer {
     margin: 35px 0 0 0;
 } */
 
-.carousel { 
-    position: relative;
-    width: 80%;
-    height: 600px;
-    margin: auto;
-}
+
 
 
