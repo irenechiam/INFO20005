@@ -390,11 +390,16 @@ footer {
     height: 15px;
     background: rgba(255, 255, 255, 0.3);
     margin: 0 12px;
+    cursor: pointer;
 }
 
 .indicator.current_slide { 
     background: rgba(255,255,255,0.7);
 } 
+
+.is_hidden { 
+    display: none;
+}
 
 .back_btn {
     margin-right: auto;
@@ -408,13 +413,6 @@ footer {
 
 .beast_name {
     margin: 35px 0 0 0;
-} 
-
-.carousel { 
-    position: relative;
-    width: 80%;
-    height: 600px;
-    margin: auto;
 }
 
 
