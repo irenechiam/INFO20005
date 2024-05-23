@@ -399,9 +399,16 @@ footer {
 .back_btn {
     margin-right: auto;
 }
+
+.back_btn a {
+    padding: 10px 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
 .beast_name {
     margin: 35px 0 0 0;
-} */
+} 
 
 .carousel { 
     position: relative;
