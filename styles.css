@@ -242,16 +242,15 @@ footer {
 }
 
 .carousel_image {
-    background-color: aqua;
-    top: 1px;
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
 }
 
 .product_name { 
     position: absolute;
-    margin:auto 0;
+    margin: auto 0;
+    text-align: center;
 }
 
 .slider_container{ 
