@@ -234,104 +234,24 @@ footer {
     margin: 100px 30px 10px 30px;
 }
 
-
-/* .product_page_container { 
-    width: 90%;
-    margin: 10px auto;
-    position: relative;
-}
-
-.carousel { 
-    border: 2px solid #ccc;
-    height: 700px;
-    width: 80%;
-    position: relative;
-    overflow: hidden;
-    left: 50%;
-    transform: translate(-50%);
-}
-
-.slider { 
-    height: 100%;
-    display: flex;
-    width: 300%;
-    border: 1px solid red;
-   
-}
-
-.slider section {
-    flex-basis: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.controls {
-    position: absolute;
-    width: 100%;
-    display: flex;
-    cursor: pointer;
-}
-
-.arrow_left, .arrow_right {
-    position: absolute;
-    scale: 60%;
-    transform: translatey(-50%);
-}
-
-.arrow_left {
-    left:10px;
-}
-
-.arrow_right {
-    right:10px;
-}
-
-.controls .indicators { 
-    position: absolute;
-   transform: translateY(-10%);
-}
-
-.controls ul { 
-    position: absolute;
-    list-style: none;
-    bottom: 1px;
-    left: 50%;
-    transform: translate(-50%);
-    padding: 0;
-    margin: 0;
-   
-}
-
-.controls ul li { 
-    width: 5px;
-    height: 20px;
-    border-radius: 50px;
-    margin: 10px;
-    background: #333;
-    cursor: pointer; 
-}
-
-.controls ul li.selected { 
-    background:#ccc ;
-} */
-
-/* .beast_name {
-    margin: 35px 0 0 0;
-} */
-
 .carousel { 
     position: relative;
-    width: 80%;
+    width: 40%;
     height: 600px;
     margin: auto;
 }
 
 .carousel_image {
+    background-color: aqua;
+    top: 1px;
+    position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+}
+
+.product_name { 
+    position: absolute;
+    margin:auto 0;
 }
 
 .slider_container{ 
@@ -366,15 +286,15 @@ footer {
 }
 
 .left_arrow { 
-    left: -40px;
+    left: -120px;
 }
 
 .right_arrow{
-    right: -40px;
+    right: -120px;
 }
 
 .arrows_img { 
-    width: 20px;
+    width: 50px;
 }
 
 .carousel_nav { 
