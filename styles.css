@@ -35,7 +35,7 @@ h4 {
     font-size: 20px;
 }
 
-ul {
+.nav_ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
@@ -227,7 +227,7 @@ a {
     border-radius: 10px;
 }
 
-footer {
+.home_footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -334,4 +334,108 @@ footer {
     margin: 35px 0 0 0;
 }
 
+.celts_name {
+    padding-left: 20px;
+}
 
+.product_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    margin: 20px 20px 150px 20px;
+    height: 450px;
+}
+
+.product_grid img {
+    border: 1px solid white;
+    grid-column: 1;
+    grid-row: 1 / span 3;
+}
+
+.product_desc {
+    display: flex;
+    grid-column: 2 / span 2;
+    grid-row: 1;
+    padding: 20px;
+    justify-content: center;
+    align-self: center;
+}
+
+.add_to_cart {
+    position: absolute;
+    top: 64%;
+    left: 55%;
+    justify-content: center;
+    text-align: center;
+    width: 250px;
+    height: 70px;
+    grid-column: 2 / span 2;
+    grid-row: 3;
+    background: black;
+    padding: 10px 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.add_to_cart h3 {
+    margin: 0;
+}
+
+.product_ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    list-style-type: none;
+    padding-left: 0;
+    
+}
+
+.product_div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.product_ul h2 {
+    margin: 0;
+}
+
+.tax {
+    padding-top: 10px;
+    margin: 0;
+}
+
+.deposit {
+    margin: 0 0;
+    text-align: center;
+}
+
+.amount_grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.amount_grid button {
+    display: flex;
+    height: 50px;
+    padding: 10px;
+    align-items: center;
+    background: black;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.product_footer {
+    text-align: end;
+    padding-right: 15px;
+}
+
+.product_footer a {
+    text-decoration: underline;
+}
