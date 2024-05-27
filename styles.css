@@ -249,7 +249,6 @@ a {
 
 .product_name { 
     position: absolute;
-    margin: auto 0;
     text-align: center;
 }
 
@@ -436,6 +435,7 @@ a {
     padding-right: 15px;
 }
 
-.product_footer a {
-    text-decoration: underline;
+.product_footer button {
+    background: black;
+    border: none;
 }
