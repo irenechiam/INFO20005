@@ -35,6 +35,12 @@ h4 {
     font-size: 20px;
 }
 
+p {
+    font-family: "Archivo Black", sans-serif;
+    color: white;
+    font-size: 20px;
+}
+
 .nav_ul {
     display: flex;
     flex-wrap: wrap;
@@ -329,11 +335,7 @@ a {
     border-radius: 10px;
 }
 
-.beast_name {
-    margin: 35px 0 0 0;
-}
-
-.celts_name {
+.celts_name, .beast_name, .oblivion_name {
     padding-left: 20px;
 }
 
@@ -341,7 +343,7 @@ a {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    margin: 20px 20px 150px 20px;
+    margin: 20px 20px 140px 20px;
     height: 450px;
 }
 
@@ -438,4 +440,103 @@ a {
 .product_footer button {
     background: black;
     border: none;
+}
+
+.deposit_info {
+    display: flex;
+    justify-content: end;
+    align-self: center;
+    padding-right: 15px;
+}
+
+.deposit_info button{
+    width: auto;
+    background: black;
+    border: none;
+}
+
+.center_text {
+    padding-left: 13%;
+    padding-right: 13%;
+}
+
+.product_intro {
+    display: flex;
+    flex-direction: column;
+}
+
+.product_intro img {
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.limited_edition {
+    margin-top: 150px;
+}
+
+.edition {
+    text-align: center;
+}
+
+.specs_title {
+    margin-top: 150px;
+}
+
+.specs_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.specs_1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.specs_1 img {
+    width: 200px;
+    height:290px;
+    margin: 10px;
+}
+
+.specs_2 {
+    display: flex;
+    flex-direction: column;
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.specs_3 {
+    grid-column: 2 / span 2;
+    grid-row: 2;
+    align-items: center;
+    text-align: center;
+}
+
+.related_products_title {
+    padding-left: 20px;
+}
+
+.oblivion_product, .celts_product {
+    width: 20%;
+    height: 20%;
+    text-align: center;
+}
+
+.related_products img{
+    width: 50%;
+}
+
+.related_products {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.product-link {
+    display: block;
 }
