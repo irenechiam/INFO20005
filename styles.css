@@ -59,7 +59,9 @@ li {
 }
 
 .menu_btn {   
-    width: 40px;
+    font-size: 55px;
+    cursor: pointer;
+    color: white;
 }
 
 .brand_img {
@@ -539,4 +541,34 @@ a {
 
 .product-link {
     display: block;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0; 
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.2s;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 20px;
+    left: 50px;
+    font-size: 50px;
+    margin-left: 200px;
 }

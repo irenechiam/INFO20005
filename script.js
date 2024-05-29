@@ -79,3 +79,11 @@ dotsNav.addEventListener('click', e => {
     arrowVisibility (slides, prevButton, nextButton, targetIndex);
 
 })
+
+function openNav() {
+    document.getElementById("mySideNav").style.width = "350px";
+}
+
+function closeNav() {
+    document.getElementById("mySideNav").style.width = "0";
+}
