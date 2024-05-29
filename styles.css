@@ -59,9 +59,8 @@ li {
 }
 
 .menu_btn {   
-    font-size: 55px;
+    width: 45px;
     cursor: pointer;
-    color: white;
 }
 
 .brand_img {
