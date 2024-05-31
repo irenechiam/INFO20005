@@ -703,6 +703,18 @@ a {
     margin-left: 200px;
 }
 
+.menu_align {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.menu_align img {
+    padding-left: 15px;
+    width: 40px;
+    height: 40px;
+}
+
 
 
 

@@ -9,11 +9,33 @@
     <title>Product Info</title>
 </head>
 <body>
+
+     <!-- Making the menu sidebar -->
+     <div id="mySideNav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="menu_align">
+            <img src="Icons/icons8-people-48.png">
+            <a href="#"><h3>ABOUT US</h3></a>
+        </div>
+        <div class="menu_align">
+            <img src="Icons/icons8-pinball-50.png">
+            <a href="Products.html"><h3>PRODUCTS</h3></a>
+        </div>
+        <div class="menu_align">
+            <img src="Icons/icons8-world-50.png">
+            <a href="#"><h3>DISTRIBUTORS</h3></a>
+        </div>
+        <div class="menu_align">
+            <img src="Icons/icons8-email-50.png">
+            <a href="#"><h3>CONTACT US</h3></a>
+        </div>
+    </div>
+
     <nav>
         <ul class="nav_ul">
             <li class="back_btn"><h2><a href="index.html">BACK</a></h2></li>
             <li class="cart_btn"><h2>CART</h2><span class="total_indicator">0</span></li>
-            <li><img class="menu_btn" src="https://www.pngkey.com/png/full/332-3321462_mobile-menu-for-barefoot-resort-vacations-hamburger-menu.png"></li>
+            <li><img class="menu_btn" src="https://www.pngkey.com/png/full/332-3321462_mobile-menu-for-barefoot-resort-vacations-hamburger-menu.png" onclick="openNav()"></li>
         </ul>
     </nav>
 
