@@ -374,6 +374,7 @@ a {
     padding: 10px 10px;
     border: 1px solid white;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .add_to_cart h3 {
@@ -433,9 +434,249 @@ a {
 .product_footer {
     text-align: end;
     padding-right: 15px;
+    bottom:0; 
 }
 
 .product_footer button {
     background: black;
     border: none;
+}
+
+
+
+
+/* cart and checkout  */
+/* .productInfo_container { 
+    width: 1368px;
+    height: 100%;
+    margin: auto;
+    max-width: 90%;
+    transition: transform 1s;
+    position: relative;
+    display: flex;
+    background-color: aqua;
+}
+
+.cart_btn { 
+    cursor: pointer;
+}; 
+
+.cart{
+    position: absolute;
+    top:0;
+    right:0; 
+    width: 400px;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 50px 1fr 50px;
+    gap: 20p;
+    padding: 20px;
+    transition: right 1s;
+    background-color: purple;
+}
+
+.cart h2{
+    color: #fff;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart .list_cart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:  100%;
+    width: 400px;
+    position: relative;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.cart .list_cart .items{ 
+    display: grid;
+    grid-template-columns: 120px 1fr 120px;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.cart .list_cart img{ 
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.cart .list_cart .items .name{
+    font-weight: bold;
+}
+
+
+
+.cart .listCart .items span {
+    display: block;
+    width: 50px;
+    text-align: center;
+}
+
+
+
+.cart .list_cart::-webkit-scrollbar{
+    width: 0;
+}
+
+
+.cart .buttons{ 
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    text-align:center ;
+}
+
+.cart .buttons div{ 
+    background-color:red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cart .buttons .checkout_button{
+    background-color: blue;
+}
+
+ */
+
+ .productInfo_container { 
+    display: flex;
+ }
+
+ .cart_btn {
+    padding: 0;
+    margin: 0;
+    height: 100px;
+    position: relative;
+    cursor: pointer;
+ }
+
+ .total_indicator { 
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    border-radius: 50%;
+    scale: 150%;
+
+ }
+
+
+ .cart { 
+    height: 900px;
+    width: 0; 
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+    background-color: brown;
+
+}
+
+.cart h2 { 
+    background-color: blueviolet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart_close_btn { 
+    color: black;
+    font-size: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+}
+
+.cart .list {
+    display: flex;
+    align-items: flex-start; /* Align items to the start (top) */
+    justify-content: flex-start; /* Align items to the start (left) */
+    height: 80%;
+    width: 400px;
+    position: relative;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.cart .list .items {
+    /* display: flex;
+    align-items: flex-start; /* Align items to the start (top) */
+    /* justify-content: flex-start; Align items to the start (left) */ 
+    
+    display: grid;
+    grid-template-columns: 120px 1fr 120px;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: aqua;
+}
+
+
+.cart .list .items img {
+    width: 150px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover;
+    border-radius: 10px;
+    align-self: flex-start; /* Align image to the start (top) */
+    justify-self: flex-start; /* Align image to the start (left) */
+}
+
+.cart .list .items .details { 
+    color: black;
+}
+
+.details .name { 
+    font-weight: bold;
+}
+
+.total_price { 
+    height: 60px;
+    color: #fff;
+    background-color:yellow;
+    color:black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.buttons { 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+}
+
+.buttons div {
+    background-color: antiquewhite;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    text-align: center;
 }
