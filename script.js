@@ -170,6 +170,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
+function openNav() {
+    document.getElementById("mySideNav").style.width = "350px";
+}
+
+function closeNav() {
+    document.getElementById("mySideNav").style.width = "0";
+}
+
     // within cart
     decreaseValue.addEventListener('click', e => { 
         if (count > 0) {
