@@ -94,6 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeCart = document.querySelector('.cart_close_btn')
 
     const totalIndicator = document.querySelector('.total_indicator'); 
+    const itemContainer = document.querySelector('.items_container'); 
 
     const addTrigger = document.querySelector('.add_to_cart');
     const amountToAdd = document.querySelector('.amount_to_add'); 
@@ -133,6 +134,11 @@ document.addEventListener('DOMContentLoaded', () => {
        }
     }
 
+    function emptyCartMessage() { 
+        if (count>0) { 
+            itemContainer.classList.remove('is_hidden');
+        }
+    }
    
     //within product info page 
 
@@ -148,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (amount > 1) { 
             count += amount; 
             quantityValue.innerHTML = count; 
-            amount = 1; 
+            amount = 0; 
             amountToAdd.innerHTML = amount; 
         } else { 
             increaseCount();
