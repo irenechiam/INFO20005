@@ -86,9 +86,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Product page JS
     let count = 0;
-    let amount = 1; 
+    let amount = 0; 
     let celtPrice = 2000;  
 
+    const productInfoContainer = document.querySelector('.productInfo_container');
     const cart = document.querySelector('.cart');
     const openCart = document.querySelector('.cart_btn');
     const closeCart = document.querySelector('.cart_close_btn')
@@ -137,23 +138,22 @@ document.addEventListener('DOMContentLoaded', () => {
     //within product info page 
 
     openCart.addEventListener('click', e => { 
-        cart.style.width = '500px'; 
+        cart.style.width = '35vw'; 
+        productInfoContainer.style.opacity = '0.3'; 
     })
 
     closeCart.addEventListener('click', e=> { 
         cart.style.width = '0px'; 
+        productInfoContainer.style.opacity = '1';
     })
 
   addTrigger.addEventListener('click', e => { 
-        if (amount > 1) { 
+        if (amount > 0) { 
             count += amount; 
             quantityValue.innerHTML = count; 
-            amount = 1; 
+            amount = 0; 
             amountToAdd.innerHTML = amount; 
-        } else { 
-            increaseCount();
-        } 
-
+        }
         updateTotalPrice();
         cart.style.width = '500px'; 
 
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     decreaseAdd.addEventListener('click', e=> { 
-        if (amount > 1 ) { 
+        if (amount > 0 ) { 
             amount -= 1; 
             amountToAdd.innerHTML = amount; 
         }
