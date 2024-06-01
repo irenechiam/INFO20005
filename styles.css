@@ -976,6 +976,10 @@ a {
         color: white;
         font-size: 15px;
     }
+    li {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
     .menu_btn {
         width: 30px;
         cursor: pointer;
@@ -1063,5 +1067,31 @@ a {
     }
     .home_footer img {
         width: 30%;
+    }
+    .carousel {
+        position: relative;
+        width: 80%;
+        height: 450px;
+        margin: 0;
+        align-items: center;
+        margin-top: 100px;
+    }
+    .carousel_image {
+        width: 85%;
+    }
+    .slider_container {
+        margin-left: 50px;
+    }
+    .left_arrow { 
+        left: -10px;
+    }
+    .right_arrow{
+        right: -80px;
+    }
+    .arrows_img { 
+        width: 40px;
+    }
+    .carousel_nav {
+        margin-left: 70px;
     }
 }
