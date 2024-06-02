@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Product page JS
     let count = 0;
-    let amount = 1; 
+    let amount = 0; 
     let celtPrice = 2000;  
 
     const cart = document.querySelector('.cart');
@@ -113,6 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const totalPrice = count * celtPrice;
         totalSumElement.innerHTML = `$${totalPrice}`;
         updateTotalIndicator();
+        emptyCartMessage();
     }
     
     function increaseCount() {
@@ -135,22 +136,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function emptyCartMessage() { 
-        if (count>0) { 
+        if (count > 0) { 
             itemContainer.classList.remove('is_hidden');
+            document.querySelector('.shopping_cart').classList.add('is_hidden');
+            document.querySelector('.no_items').classList.add('is_hidden');
+        } else {
+            itemContainer.classList.add('is_hidden');
+            document.querySelector('.shopping_cart').classList.remove('is_hidden');
+            document.querySelector('.no_items').classList.remove('is_hidden');
         }
     }
    
+    function blurBackground () { 
+
+    }
+    
     //within product info page 
 
     openCart.addEventListener('click', e => { 
         cart.style.width = '500px'; 
+        document.querySelector('.productInfo_container').style.opacity = '0.2'
     })
 
     closeCart.addEventListener('click', e=> { 
         cart.style.width = '0px'; 
+        document.querySelector('.productInfo_container').style.opacity = '1'
     })
 
   addTrigger.addEventListener('click', e => { 
+    if (amount > 0) { 
         if (amount > 1) { 
             count += amount; 
             quantityValue.innerHTML = count; 
@@ -159,11 +173,13 @@ document.addEventListener('DOMContentLoaded', () => {
         } else { 
             increaseCount();
         } 
-
+    }
         updateTotalPrice();
         cart.style.width = '500px'; 
+        document.querySelector('.productInfo_container').style.opacity = '0.2'
 
     });
+
 
     increaseAdd.addEventListener('click', e => { 
         increaseAmount(); 
@@ -173,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (amount > 1 ) { 
             amount -= 1; 
             amountToAdd.innerHTML = amount; 
-        }
+        } 
     })
 
     // within cart
@@ -182,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
             count -= 1;
             quantityValue.innerHTML = count;
             updateTotalPrice();
-        }
+        } 
     });
     
     increaseValue.addEventListener('click', e => { 
@@ -194,6 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial total price update
     updateTotalPrice();
     updateTotalIndicator();
+    emptyCartMessage(); 
 
  
 
