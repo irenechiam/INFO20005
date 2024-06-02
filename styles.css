@@ -8,7 +8,6 @@
 
 body {
     background-color: black;
-    overflow: hidden;
 } 
 nav { 
     overflow: hidden;
@@ -719,6 +718,111 @@ a {
     height: 40px;
 }
 
+.checkout_title{
+    margin-right: 760px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.payment_title {
+    text-align: center;
+    margin-top: 150px;
+}
+
+.payment {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.order_btn {
+    text-align: center;
+}
+
+.order_btn a {
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+input {
+    background-color: black;
+    border-radius: 10px;
+    border-color: white;
+    width: 300px;
+    height: 30px;
+    margin: 10px;
+    color: white;
+    font-family: "Archivo Black", sans-serif;
+    padding: 7px;
+}
+
+input:focus {
+    color: white;
+    font-family: "Archivo Black", sans-serif;
+    color: white;
+    font-size: 15px;
+    padding-left: 10px;
+    outline-color: white;
+}
+
+::placeholder {
+    font-family: "Archivo Black", sans-serif;
+    color: white;
+    font-size: 15px;
+    padding: 7px;
+}
+
+.card_name {
+    grid-column: 2 / span 2;
+    grid-row: 1;
+    width: 640px;
+}
+
+.card_number {
+    grid-column: 2 / span 2;
+    grid-row: 2;
+    width: 640px;
+}
+
+.checkout_date {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.cvc {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.ordered_title {
+    margin: 250px 90px 40px 90px;
+    font-size: 80px;
+    text-align: center;
+    padding: 0 150px 0 150px;
+}
+
+.small_msg {
+    text-align: center;
+    margin-top: 100px;
+    padding-left: 300px;
+    padding-right: 300px;
+}
+
+.continue_btn {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.continue_btn a {
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 27px;
+    cursor: pointer;
+}
 
 
 
