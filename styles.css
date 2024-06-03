@@ -1160,4 +1160,55 @@ input:focus {
     .carousel_nav {
         margin-left: 70px;
     }
+    .checkout_title{
+        margin-right: 5px;
+        font-size: 33px;
+    }
+    .payment_title {
+        margin-top: 150px;
+        font-size: 30px;
+    }
+    .order_btn {
+        text-align: center;
+        margin-top: 200px;
+    }
+    .order_btn a {
+        border: 1px solid white;
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 27px;
+        cursor: pointer;
+    }
+    input {
+        background-color: black;
+        border-radius: 5px;
+        border-color: white;
+        width: 133px;
+        height: 20px;
+        margin: 10px;
+        color: white;
+        font-family: "Archivo Black", sans-serif;
+        padding: 5px;
+    }
+    input:focus {
+        color: white;
+        font-family: "Archivo Black", sans-serif;
+        color: white;
+        font-size: 15px;
+        padding-left: 10px;
+        outline-color: white;
+    }
+    ::placeholder {
+        font-family: "Archivo Black", sans-serif;
+        color: white;
+        font-size: 15px;
+        padding: 5px;
+    }
+    .card_name {
+        width: 300px;
+    }
+    .card_number {
+        width: 300px;
+    }
+
 }
