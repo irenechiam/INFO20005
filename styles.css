@@ -1210,5 +1210,27 @@ input:focus {
     .card_number {
         width: 300px;
     }
-
+    .ordered_title {
+        margin: 230px 50px 40px 50px;
+        font-size: 33px;
+        text-align: center;
+        padding: 0;
+    }
+    .small_msg {
+        text-align: center;
+        margin-top: 50px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .continue_btn {
+        text-align: center;
+        margin-top: 70px;
+    }
+    .continue_btn a {
+        border: 1px solid white;
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 20px;
+        cursor: pointer;
+    }
 }
