@@ -339,7 +339,7 @@ a {
     border-radius: 10px;
 }
 
-.celts_name, .beast_name, .oblivion_name {
+.product_name{
     padding-left: 20px;
 }
 
@@ -824,10 +824,6 @@ input:focus {
     cursor: pointer;
 }
 
-
-
-/* cart and checkout  */
-
 .gradient_green { 
     pointer-events: none;
     position: absolute;
@@ -848,9 +844,53 @@ input:focus {
     background-image: radial-gradient(closest-side, rgba(66, 135, 245,0.2), transparent);
 }
 
+.productInfo_container { 
+    padding: 20px;
+}
 
+/* cart  */
 
+/* .cart { 
+   height: 100vh;
+   width: 500px; 
+   position: fixed;
+   top: 0;
+   right: 0;
+   overflow-x: hidden;
+   padding-top: 2%;
+   transition: 0.5s;
+   overflow: hidden;
+   background-color: black;
 
+} */
+
+.cart_overlay{ 
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100vh;
+    background-color: black;
+    padding-top: 2%;
+    overflow: hidden;
+    transition: width 0.5s;
+    z-index: 1000;
+}
+
+.cart_iframe { 
+    width: 500px;
+    height: 100%;
+    border: none;
+}
+.cart { 
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 500px;
+    background-color: black;
+    transition: 0.5s;
+}
 
 .cart_btn {
    padding: 0;
@@ -858,6 +898,7 @@ input:focus {
    height: 100px;
    position: relative;
    cursor: pointer;
+   background-color: black;
 
 }
 
@@ -868,23 +909,8 @@ input:focus {
    background-color: red;
    border-radius: 50%;
    scale: 150%;
-
 }
 
-
-.cart { 
-   height: 100vh;
-   width: 0; 
-   position: fixed;
-   top: 0;
-   right: 0;
-   overflow-x: hidden;
-   padding-top: 2%;
-   transition: 0.5s;
-   overflow: hidden;
-   background-color: black;
-
-}
 
 .cart_heading { 
    display: flex;
@@ -916,7 +942,7 @@ input:focus {
    align-items: center;
    justify-content: center;
    height: 60%;
-   width: 35vw;
+   width: 100vw;
    position: relative;
    padding: 20px;
    background-color: black;

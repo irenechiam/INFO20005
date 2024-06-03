@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="script.js"></script>
     <title>Product Info</title>
 </head>
 <body>
@@ -40,11 +39,14 @@
         </ul>
     </nav>
 
-  
+    <div class="cart_overlay">
+        <iframe class="cart_iframe" src="cart.html"></iframe>
+    </div>
+    
     <div class="productInfo_container">
         <div class="gradient_green"></div>
         <div class="gradient_blue"></div>
-        <h2 class="celts_name">CELTS - HIGHLAND EDITION</h2>
+        <h2 class="product_name">CELTS - HIGHLAND EDITION</h2>
         <section class="product_grid">
             <img src="Products /Celts.png">
             <h3 class="product_desc">Haggis Pinball's award winning CELTS pinball machine</h3>
@@ -64,7 +66,7 @@
         </section>
     </div>
 
-        <div class="cart">
+        <!-- <div class="cart">
             <div class="cart_heading"> <h2>CART</h2></div>       
             <div class="cart_close_btn">x</div>
             <div class="list">
@@ -94,11 +96,12 @@
             <div class="buttons">
                 <div class="checkout_button">CHECK OUT</div>
             </div>
-        </div>
+        </div> -->
 
 
     <footer class="product_footer">
         <button><h3><u>DEPOSIT INFO</u></h3></button>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
