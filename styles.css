@@ -367,11 +367,10 @@ a {
 }
 
 .add_to_cart {
-    position: absolute;
-    top: 64%;
-    left: 55%;
-    justify-content: center;
+    align-self: center;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
     width: 250px;
     height: 70px;
     grid-column: 2 / span 2;
@@ -853,22 +852,17 @@ input:focus {
 
 
 .cart_btn {
+    /*
    padding: 0;
    margin: 0;
    height: 100px;
    position: relative;
+   */
    cursor: pointer;
 
 }
 
 .total_indicator { 
-   position: absolute;
-   top: 0;
-   right: 0;
-   background-color: red;
-   border-radius: 50%;
-   scale: 150%;
-
 }
 
 
@@ -1232,5 +1226,76 @@ input:focus {
         padding: 10px;
         font-size: 20px;
         cursor: pointer;
+    }
+    .celts_name {
+        margin-top: 0;
+    }
+    .product_grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        margin: 20px 20px 20px 20px;
+        height: 750px;
+    }
+    .product_grid img {
+        grid-column: 1 / span 3;
+        grid-row: 1;
+        width: 300px;
+    }
+    .product_desc {
+        font-size: 20px;
+        padding: 0;
+        grid-column: 1 / span 3;
+        grid-row: 2;
+        margin-bottom: auto; 
+    }
+    .product_ul {
+        margin-bottom: 5px;
+    }
+    .product_div {
+        grid-column: 1 / span 2;
+        grid-row: 2;
+        align-self: last baseline;
+        margin-bottom: 20px;
+    }
+    .price_text {
+        font-size: 20px;
+    }
+    .tax {
+        font-size: 12px;
+    }
+    .amount_grid {
+        grid-column: 3;
+        grid-row: 2;
+        align-self: flex-end;
+        margin-bottom: 30px;
+    }
+    .amount_grid h2{
+        font-size: 20px;
+    }
+    .amount_grid button {
+        display: flex;
+        height: 30px;
+        padding: 5px;
+        align-items: center;
+        background: black;
+        border: 1px solid white;
+        border-radius: 5px;
+    }
+    .add_to_cart {
+        text-align: center;
+        width: 120px;
+        height: 60px;
+        grid-column: 2;
+        grid-row: 3;
+        background: black;
+        padding: 3px;
+        border: 1px solid white;
+        border-radius: 10px;
+        cursor: pointer;
+        align-self: flex-start;
+    }
+    .add_to_cart h3 {
+        font-size: 15px;
     }
 }
