@@ -84,13 +84,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Product page JS
+    let count = 0;
+    let amount = 1; 
+    let celtPrice = 2000;  
 
-    
-    // //cart page 
-    // const totalIndicator = document.querySelector('.total_indicator'); 
-
-    // const nilMessage = document.querySelector('.nil');
-    // const totalSumElement = document.querySelector('.total_price');
+    const cart = document.querySelector('.cart');
+    const openCart = document.querySelector('.cart_btn');
+    const closeCart = document.querySelector('.cart_close_btn')
 
     // let cartData = JSON.parse(sessionStorage.getItem('cart') || '[]');
  
@@ -133,133 +134,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const openCart = document.querySelector('.cart_btn');
     
 
-        openCart.addEventListener('click', e => {
-            cartOverlay.style.width = '500px';
-            document.querySelector('.productInfo_container').style.opacity = '0.2';
-        });
-
-        iframe.onload = () => {
-            // Accessing the iframe document
-            let iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-            const closeCart = iframeDocument.querySelector('.cart_close_btn');
-
-            if (closeCart) {
-                closeCart.addEventListener('click', e => {
-                    cartOverlay.style.width = '0px';
-                    document.querySelector('.productInfo_container').style.opacity = '1';
-                });
-            } 
-        };   
-
-    //product specific  start 
-//     const addToCartBtn = document.querySelector('.add_to_cart');
-//     let cartData = JSON.parse(sessionStorage.getItem('cart') || '[]');
-//     const amountToAdd = document.querySelector('.amount_to_add');
-//     let amount = parseInt(amountToAdd.innerText);
-//     const itemContainer = document.querySelector('.items_container');
-
-//     let productName = document.querySelector('.product_name').innerText;
-//     let productImage = document.querySelector('.product_grid img').src; 
-//     let productPrice = getPrice(productName); 
-//     let product = {
-//         name: productName,
-//         price: productPrice,
-//         quantity: amount,
-//         image: productImage
-//     };
-
-//    function getPrice(productName) { ///!!!! UPDATE THIS!!!!!!!!!!!!!!!!
-//     let priceMapping = { 
-//         'CELTS - HIGHLAND EDITION': 2000,
-//         'BEAST': 2000,
-//         'ORBLIVION': 3000
-//     }; 
-//     for(let key in priceMapping) { 
-//         if(productName.includes(key)){
-//             return priceMapping[key]; 
-//         }
-//     }
-//     return 0; 
-//     }
-   
-//     function saveCartToSessionStorage() { //pushing cart products to session storage
-//         cartData.push(product);
-//         sessionStorage.setItem('cart', JSON.stringify(cartData));
-//     } 
-
-//     function addToCart(product) { //
-//         saveCartToSessionStorage(product); 
-//         cartOverlay.style.width = '500px';
-//         document.querySelector('.productInfo_container').style.opacity = '0.2';
-//     } 
-
-   
-//     function displayCartItems() {
-//     const nilMessage = document.querySelector('.nil');
-//     const itemContainer = document.querySelector('.items_container');
-
-//     if (cartData.length === 0) {
-//         nilMessage.classList.remove('is_hidden');
-//     } else {
-//         nilMessage.classList.add('is_hidden');
-//         itemContainer.innerHTML = '';
-//         cartData.forEach(item => {
-//             let itemElement = document.createElement('div');
-//             itemElement.classList.add('items');
-//             itemElement.innerHTML = `
-//                 <img src="${item.image}" alt="${item.name}">
-//                 <div class="details">
-//                     <div class="name">${item.name}</div>
-//                     <div class="price">$${item.price} / ${item.quantity}</div>
-//                 </div>
-//                 <div class="quantity">
-//                     <button class="decrease_value">-</button>
-//                     <span class="quantity_value">${item.quantity}</span>
-//                     <button class="increase_value">+</button>
-//                 </div>
-//             `;
-//             itemContainer.appendChild(itemElement);
-//         });
-//         updateTotalPrice(cartData);
-//     }
-// }
-
-
-//     addToCartBtn.addEventListener('click', e => {     
-//         if (amount > 0) { 
-//             addToCart(product); 
-//         }
-//         // emptyCartMessage();
-//     }) end! 
-
-document.addEventListener('DOMContentLoaded', function() {
-    const addToCartBtn = document.querySelector('.add_to_cart');
-    let cartData = JSON.parse(sessionStorage.getItem('cart') || '[]');
-    const amountToAdd = document.querySelector('.amount_to_add');
-    let amount = parseInt(amountToAdd.innerText);
-
-    let productName = document.querySelector('.product_name').innerText;
-    let productImage = document.querySelector('.product_grid img').src; 
-    let productPrice = getPrice(productName); 
-    let product = {
-        name: productName,
-        price: productPrice,
-        quantity: amount,
-        image: productImage
-    };
-
-    function getPrice(productName) {
-        let priceMapping = {
-            'CELTS - HIGHLAND EDITION': 2000,
-            'BEAST': 2000,
-            'ORBLIVION': 3000
-        };
-        for (let key in priceMapping) {
-            if (productName.includes(key)) {
-                return priceMapping[key];
-            }
-        }
-        return 0;
+    
+    function updateTotalPrice() {
+        const totalPrice = count * celtPrice;
+        totalSumElement.innerHTML = `$${totalPrice}`;
+        updateTotalIndicator();
     }
 
     function saveCartToSessionStorage(product) {
@@ -287,113 +166,56 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        if (cartData.length === 0) {
-            nilMessage.classList.remove('is_hidden');
-        } else {
-            nilMessage.classList.add('is_hidden');
-            itemContainer.innerHTML = '';
-            cartData.forEach(item => {
-                let itemElement = document.createElement('div');
-                itemElement.classList.add('items');
-                itemElement.innerHTML = `
-                    <img src="${item.image}" alt="${item.name}">
-                    <div class="details">
-                        <div class="name">${item.name}</div>
-                        <div class="price">$${item.price} / ${item.quantity}</div>
-                    </div>
-                    <div class="quantity">
-                        <button class="decrease_value">-</button>
-                        <span class="quantity_value">${item.quantity}</span>
-                        <button class="increase_value">+</button>
-                    </div>
-                `;
-                itemContainer.appendChild(itemElement);
-            });
-            updateTotalPrice(cartData);
+    function emptyCartMessage() { 
+        if (count>0) { 
+            itemContainer.classList.remove('is_hidden');
         }
     }
+   
+    //within product info page 
 
-    addToCartBtn.addEventListener('click', e => {
-        if (amount > 0) {
-            addToCart(product);
-        }
+    openCart.addEventListener('click', e => { 
+        cart.style.width = '500px'; 
+    })
+
+    closeCart.addEventListener('click', e=> { 
+        cart.style.width = '0px'; 
+    })
+
+  addTrigger.addEventListener('click', e => { 
+        if (amount > 1) { 
+            count += amount; 
+            quantityValue.innerHTML = count; 
+            amount = 0; 
+            amountToAdd.innerHTML = amount; 
+        } else { 
+            increaseCount();
+        } 
+
+        updateTotalPrice();
+        cart.style.width = '500px'; 
+
     });
 
-    displayCartItems();
-});
+    increaseAdd.addEventListener('click', e => { 
+        increaseAmount(); 
+    })
 
+    decreaseAdd.addEventListener('click', e=> { 
+        if (amount > 1 ) { 
+            amount -= 1; 
+            amountToAdd.innerHTML = amount; 
+        }
+    })
 
-
-
-
-
-
-    // function emptyCartMessage() { 
-    //     if (count > 0) { 
-    //         itemContainer.classList.remove('is_hidden');
-    //         document.querySelector('.shopping_cart').classList.add('is_hidden');
-    //         document.querySelector('.no_items').classList.add('is_hidden');
-    //     } else {
-    //         itemContainer.classList.add('is_hidden');
-    //         document.querySelector('.shopping_cart').classList.remove('is_hidden');
-    //         document.querySelector('.no_items').classList.remove('is_hidden');
-    //     }
-    // }
-
-    // displayCartItems();
-
-
-    //amount buttons from product page second start
-    // const increaseAdd = document.querySelector('.increase');
-    // const decreaseAdd = document.querySelector('.decrease');
-
-    // function increaseAmount() { 
-    //     amount += 1; 
-    //     amountToAdd.innerHTML = amount; 
-    // }
-   
-    // increaseAdd.addEventListener('click', increaseAmount());
-
-    // decreaseAdd.addEventListener('click', e=> { 
-    //     if (amount > 0 ) { 
-    //         amount -= 1; 
-    //         amountToAdd.innerHTML = amount; 
-    //     } 
-    // })
-
-    //second end
-
-    // if (document.querySelector('.total_indicator')) {
-    //     const totalIndicator = document.querySelector('.total_indicator');
-    //     const itemContainer = document.querySelector('.items_container');
-
-    //     const totalSumElement = document.querySelector('.total_price');
-    
-    //   
-    //     function updateTotalPrice(cartData) {
-    //         let total = cartData.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    //         totalSumElement.innerText = `$${total}`;
-    //     }
-    
-    //   
-    
-    // }
-    
-   //end 
-    
-    // function updateTotalIndicator() {
-    //    if (count > 0) { 
-    //     totalIndicator.innerHTML = count; 
-    //    } else { 
-    //     totalIndicator.innerHTML = 0;
-    //    }
-    // }
-
- 
-  
-
-    // displayCartItems(); 
-
+    // within cart
+    decreaseValue.addEventListener('click', e => { 
+        if (count > 0) {
+            count -= 1;
+            quantityValue.innerHTML = count;
+            updateTotalPrice();
+        }
+    });
     
 
     // // within cart
@@ -404,31 +226,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
 
     
-    // function increaseCount() {
-    //     count += 1; 
-    //     quantityValue.innerHTML = count;
-    //     updateTotalPrice();
-    // }
-
-    // decreaseValue.addEventListener('click', e => { 
-    //     if (count > 0) {
-    //         count -= 1;
-    //         quantityValue.innerHTML = count;
-    //         updateTotalPrice();
-    //     } 
-    // });
-    
-    // increaseValue.addEventListener('click', e => { 
-    //     increaseCount();
-    // });
-    
-    
-    // // Initial total price update
-    // updateTotalPrice();
-    // updateTotalIndicator();
-    // emptyCartMessage(); 
+    // Initial total price update
+    updateTotalPrice();
+    updateTotalIndicator();
 
  
+
+});
+
 
     // nav
     function openNav() {
