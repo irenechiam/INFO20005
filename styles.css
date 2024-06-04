@@ -8,7 +8,6 @@
 
 body {
     background-color: black;
-    overflow: hidden;
 } 
 nav { 
     overflow: hidden;
@@ -867,26 +866,19 @@ input:focus {
 
  .cart .list {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     height: 60%;
-    width: 100%;
     position: relative;
-    padding: 20px;
-    background-color: black;
+    background-color:black;
     border-top: 1px solid white;
+    padding: 20px;
  }
  
 
 .cart_btn {
-    /*
-   padding: 0;
-   margin: 0;
-   height: 100px;
-   position: relative;
-   */
    cursor: pointer;
-
 }
 
 .total_indicator { 
@@ -933,46 +925,53 @@ input:focus {
    position: relative;
 }
 
+.items { 
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 4px;
+    width: 450px;
+    background-color: black;
+    position: relative;
 
-.cart .list .items { 
-   position: relative;
-   display: grid;
-   grid-template-columns: 120px 1fr 120px;
-   align-items: center;
-   gap: 40px;
-   padding: 10px;
-   margin-bottom: 20px;
-   position: absolute;
-   top: 0;
-   left: 0;
-   border: 1px solid white;
-   border-radius: 5%;
-   scale: 80%;
+}
+.cart_image { 
+    width: 150px; 
+    height: auto; 
+    object-fit: cover;
+    border-radius: 10px;
+    align-self: flex-start; 
+    justify-self: flex-start; 
+ }
+
+.cart_name { 
+    font-weight: bold;
+    font-family: "Archivo Black", sans-serif;
+    color: white;
 }
 
-
-.cart .list .items img {
-   width: 150px; 
-   height: auto; 
-   object-fit: cover;
-   border-radius: 10px;
-   align-self: flex-start; 
-   justify-self: flex-start; 
+.details_container { 
+    display: flex;
+    gap: 10px; 
 }
 
-.cart .list .items .details { 
-   font-family: "Archivo Black", sans-serif;
-   color: white;
+.details { 
+    font-family: "Archivo Black", sans-serif;
+    color: white;
+    top:50%; 
+    transform: translateY(50%);
+    width: 100%;
+    height: 100px;
 }
 
-.details .name { 
-   font-weight: bold;
-}
-
-.items .quantity {
+.quantity {
+    position: absolute;
    font-family: "Archivo Black", sans-serif;
    color:white; 
-   font-size: 30px;
+   font-size: 20px;
+   height: 30px;
+   top: 60%;
+   left: 50%;
 }
 
 .price_overview { 
@@ -1345,7 +1344,9 @@ input:focus {
 }
 .checkout_list{ 
     height: 470px;
+    padding: 20px;
 }
+
 
 .checkout_calc { 
     border-bottom: 1px solid white;
@@ -1400,7 +1401,7 @@ input:focus {
 
 .checkout_form{
     width: 50%;
-    height: 80vh;
+    height: 60vh;
     position: relative;
     font-family: "Archivo Black", sans-serif;
     font-size: 12px;
@@ -1475,7 +1476,21 @@ input[type="submit"] {
     cursor: pointer;
 }
 
-input[type="submit"]:hover {
-    background-color:#fff;
+
+.to_payment_btn { 
+    color: #fff;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 4px;
+    height: 40px;
+    width: 100px;
+    position: absolute;
+    bottom: 30px;
+    left: 45%;
+    cursor: pointer;
+}
+
+.to_payment_btn:hover{
+    background-color: #fff;
     color: black;
 }
