@@ -729,9 +729,21 @@ a {
 }
 
 .payment {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    font-family: "Archivo Black", sans-serif;
+    font-size: 12px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.payment input {
+    width: 640px;
+}
+
+.payment .form-row .form-group {
+    width: 50%;
 }
 
 .order_btn {
@@ -774,26 +786,12 @@ input:focus {
     padding: 7px;
 }
 
-.card_name {
-    grid-column: 2 / span 2;
-    grid-row: 1;
-    width: 640px;
+#date {
+    width: 310px;
 }
 
-.card_number {
-    grid-column: 2 / span 2;
-    grid-row: 2;
-    width: 640px;
-}
-
-.checkout_date {
-    grid-column: 2;
-    grid-row: 3;
-}
-
-.cvc {
-    grid-column: 3;
-    grid-row: 3;
+#cvc {
+    width: 310px;
 }
 
 .ordered_title {
@@ -1182,35 +1180,13 @@ input:focus {
         font-size: 27px;
         cursor: pointer;
     }
-    input {
-        background-color: black;
-        border-radius: 5px;
-        border-color: white;
-        width: 133px;
-        height: 20px;
-        margin: 10px;
-        color: white;
-        font-family: "Archivo Black", sans-serif;
-        padding: 5px;
+    #date {
+        width: 140px;
     }
-    input:focus {
-        color: white;
-        font-family: "Archivo Black", sans-serif;
-        color: white;
-        font-size: 15px;
-        padding-left: 10px;
-        outline-color: white;
+    #cvc {
+        width: 140px;
     }
-    ::placeholder {
-        font-family: "Archivo Black", sans-serif;
-        color: white;
-        font-size: 15px;
-        padding: 5px;
-    }
-    .card_name {
-        width: 300px;
-    }
-    .card_number {
+    .payment input {
         width: 300px;
     }
     .ordered_title {
