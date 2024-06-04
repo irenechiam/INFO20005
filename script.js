@@ -1,262 +1,123 @@
-
-
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
     // Product list JS
-    const slider = document.querySelector('.slider'); 
+    const slider = document.querySelector('.slider');
     if (slider) {
-        const slides = Array.from(slider.children); 
+        const slides = Array.from(slider.children);
         const nextButton = document.querySelector('.right_arrow');
         const prevButton = document.querySelector('.left_arrow');
-        const dotsNav = document.querySelector('.carousel_nav'); 
+        const dotsNav = document.querySelector('.carousel_nav');
         const dots = Array.from(dotsNav.children);
-        const slideWidth = slides[0].getBoundingClientRect().width; 
+        const slideWidth = slides[0].getBoundingClientRect().width;
 
-        function setSlidePosition(slide, index) { 
-            slide.style.left = slideWidth * index + 'px'; 
+        function setSlidePosition(slide, index) {
+            slide.style.left = slideWidth * index + 'px';
         }
 
-        function moveToSlide(slider, currentSlide, targetSlide) { 
+        function moveToSlide(slider, currentSlide, targetSlide) {
             slider.style.transform = 'translateX(-' + targetSlide.style.left + ')';
-            currentSlide.classList.remove('current_slide'); 
-            targetSlide.classList.add('current_slide'); 
+            currentSlide.classList.remove('current_slide');
+            targetSlide.classList.add('current_slide');
         }
 
-        function updateDots(currentDot, targetDot) { 
-            currentDot.classList.remove('current_slide'); 
-            targetDot.classList.add('current_slide'); 
+        function updateDots(currentDot, targetDot) {
+            currentDot.classList.remove('current_slide');
+            targetDot.classList.add('current_slide');
         }
 
-        function arrowVisibility(slides, prevButton, nextButton, targetIndex) { 
-            if (targetIndex === 0) { 
-                prevButton.classList.add('is_hidden'); 
-                nextButton.classList.remove('is_hidden'); 
-            } else if (targetIndex === slides.length - 1) { 
-                prevButton.classList.remove('is_hidden'); 
-                nextButton.classList.add('is_hidden'); 
-            } else { 
-                prevButton.classList.remove('is_hidden'); 
-                nextButton.classList.remove('is_hidden'); 
+        function arrowVisibility(slides, prevButton, nextButton, targetIndex) {
+            if (targetIndex === 0) {
+                prevButton.classList.add('is_hidden');
+                nextButton.classList.remove('is_hidden');
+            } else if (targetIndex === slides.length - 1) {
+                prevButton.classList.remove('is_hidden');
+                nextButton.classList.add('is_hidden');
+            } else {
+                prevButton.classList.remove('is_hidden');
+                nextButton.classList.remove('is_hidden');
             }
         }
 
-        slides.forEach(setSlidePosition); 
+        slides.forEach(setSlidePosition);
 
         nextButton.addEventListener('click', function() {
-            const currentSlide = slider.querySelector('.current_slide'); 
-            const nextSlide = currentSlide.nextElementSibling; 
-            const currentDot = dotsNav.querySelector('.current_slide'); 
+            const currentSlide = slider.querySelector('.current_slide');
+            const nextSlide = currentSlide.nextElementSibling;
+            const currentDot = dotsNav.querySelector('.current_slide');
             const nextDot = currentDot.nextElementSibling;
-            const nextIndex = slides.findIndex(slide => slide === nextSlide); 
+            const nextIndex = slides.findIndex(slide => slide === nextSlide);
 
-            moveToSlide(slider, currentSlide, nextSlide); 
-            updateDots(currentDot, nextDot); 
+            moveToSlide(slider, currentSlide, nextSlide);
+            updateDots(currentDot, nextDot);
             arrowVisibility(slides, prevButton, nextButton, nextIndex);
-        }); 
+        });
 
-        prevButton.addEventListener('click', function() { 
-            const currentSlide = slider.querySelector('.current_slide'); 
-            const prevSlide = currentSlide.previousElementSibling; 
-            const currentDot = dotsNav.querySelector('.current_slide'); 
+        prevButton.addEventListener('click', function() {
+            const currentSlide = slider.querySelector('.current_slide');
+            const prevSlide = currentSlide.previousElementSibling;
+            const currentDot = dotsNav.querySelector('.current_slide');
             const prevDot = currentDot.previousElementSibling;
-            const prevIndex = slides.findIndex(slide => slide === prevSlide); 
-            
-            moveToSlide(slider, currentSlide, prevSlide); 
+            const prevIndex = slides.findIndex(slide => slide === prevSlide);
+
+            moveToSlide(slider, currentSlide, prevSlide);
             updateDots(currentDot, prevDot);
             arrowVisibility(slides, prevButton, nextButton, prevIndex);
         });
 
-        dotsNav.addEventListener('click', e => { 
-            const targetDot = e.target.closest('button'); 
-            
-            if (!targetDot) return; 
+        dotsNav.addEventListener('click', e => {
+            const targetDot = e.target.closest('button');
 
-            const currentSlide = slider.querySelector('.current_slide'); 
-            const currentDot = dotsNav.querySelector('.current_slide'); 
+            if (!targetDot) return;
+
+            const currentSlide = slider.querySelector('.current_slide');
+            const currentDot = dotsNav.querySelector('.current_slide');
             const targetIndex = dots.findIndex(dot => dot === targetDot);
-            const targetSlide = slides[targetIndex]; 
+            const targetSlide = slides[targetIndex];
 
             moveToSlide(slider, currentSlide, targetSlide);
-            updateDots(currentDot, targetDot); 
+            updateDots(currentDot, targetDot);
             arrowVisibility(slides, prevButton, nextButton, targetIndex);
         });
     }
 
 
-    
-    // //cart page 
-    // const totalIndicator = document.querySelector('.total_indicator'); 
 
-    // const nilMessage = document.querySelector('.nil');
-    // const totalSumElement = document.querySelector('.total_price');
+    // Accessing cart through cart btn
+    const cartOverlay = document.querySelector('.cart_overlay');
+    const iframe = document.querySelector('.cart_iframe');
+    const openCart = document.querySelector('.cart_btn');
 
-    // let cartData = JSON.parse(sessionStorage.getItem('cart') || '[]');
- 
-    // function updateTotalPrice(cartData) {
-    //    let total = cartData.reduce((sum,item) => sum + (item.price * item.quantity), 0);
-    //    totalSumElement.innerText = '${total}'; 
-    // }
-    
- 
-    // function displayCartItems(){
-    //     if (cartData === 0) { 
-    //         nilMessage.classList.remove(is_hidden); 
-    //     } else {
-    //         nilMessage.classList.add('is_hidden'); 
-    //         itemContainer.innerHTML = '';
-    //         cartData.forEach(item => {
-    //             let itemElement = document.createElement('div'); 
-    //             itemElement.classList.add('items')
-    //             itemElement.innerHTML =    `
-    //             <img src="${item.image}" alt="${item.name}">
-    //             <div class="details">
-    //                 <div class="name">${item.name}</div>
-    //                 <div class="price">$${item.price} / ${item.quantity}</div>
-    //             </div>
-    //             <div class="quantity">
-    //                 <button class="decrease_value">-</button>
-    //                 <span class="quantity_value">${item.quantity}</span>
-    //                 <button class="increase_value">+</button>
-    //             </div>
-    //             `;
-    //             itemContainer.appendChild('itemElement'); 
-    //         }); 
-    //         updateTotalPrice(cartData); 
-    //     }
-    // }
+    const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+    const itemContainer = iframeDocument.querySelector('.items_container');
+    const nilMessage = iframeDocument.querySelector('.nil');
+    const totalSumElement = iframeDocument.querySelector('.total_price');
 
-    //start 
-        const cartOverlay = document.querySelector('.cart_overlay');
-        const iframe = document.querySelector('.cart_iframe');
-        const openCart = document.querySelector('.cart_btn');
-    
-
-        openCart.addEventListener('click', e => {
-            cartOverlay.style.width = '500px';
-            document.querySelector('.productInfo_container').style.opacity = '0.2';
-        });
-
-        iframe.onload = () => {
-            // Accessing the iframe document
-            let iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
-            const closeCart = iframeDocument.querySelector('.cart_close_btn');
-
-            if (closeCart) {
-                closeCart.addEventListener('click', e => {
-                    cartOverlay.style.width = '0px';
-                    document.querySelector('.productInfo_container').style.opacity = '1';
-                });
-            } 
-        };   
-
-    //product specific  start 
-    const addToCartBtn = document.querySelector('.add_to_cart');
     let cartData = JSON.parse(sessionStorage.getItem('cart') || '[]');
-    const amountToAdd = document.querySelector('.amount_to_add');
-    let amount = parseInt(amountToAdd.innerText);
-    const itemContainer = document.querySelector('.items_container');
 
-    let productName = document.querySelector('.product_name').innerText;
-    let productImage = document.querySelector('.product_grid img').src; 
-    let productPrice = getPrice(productName); 
-    let product = {
-        name: productName,
-        price: productPrice,
-        quantity: amount,
-        image: productImage
-    };
-
-   function getPrice(productName) { ///!!!! UPDATE THIS!!!!!!!!!!!!!!!!
-    let priceMapping = { 
-        'CELTS - HIGHLAND EDITION': 2000,
-        'BEAST': 2000,
-        'ORBLIVION': 3000
-    }; 
-    for(let key in priceMapping) { 
-        if(productName.includes(key)){
-            return priceMapping[key]; 
-        }
-    }
-    return 0; 
-    }
-   
-    function saveCartToSessionStorage() { //pushing cart products to session storage
-        cartData.push(product);
-        sessionStorage.setItem('cart', JSON.stringify(cartData));
-    } 
-
-    function addToCart(product) { //
-        saveCartToSessionStorage(product); 
+    openCart.addEventListener('click', e => {
         cartOverlay.style.width = '500px';
         document.querySelector('.productInfo_container').style.opacity = '0.2';
-    } 
-
-   
-    function displayCartItems() {
-    const nilMessage = document.querySelector('.nil');
-    const itemContainer = document.querySelector('.items_container');
-
-    if (cartData.length === 0) {
-        nilMessage.classList.remove('is_hidden');
-    } else {
-        nilMessage.classList.add('is_hidden');
-        itemContainer.innerHTML = '';
-        cartData.forEach(item => {
-            let itemElement = document.createElement('div');
-            itemElement.classList.add('items');
-            itemElement.innerHTML = `
-                <img src="${item.image}" alt="${item.name}">
-                <div class="details">
-                    <div class="name">${item.name}</div>
-                    <div class="price">$${item.price} / ${item.quantity}</div>
-                </div>
-                <div class="quantity">
-                    <button class="decrease_value">-</button>
-                    <span class="quantity_value">${item.quantity}</span>
-                    <button class="increase_value">+</button>
-                </div>
-            `;
-            itemContainer.appendChild(itemElement);
-        });
-        updateTotalPrice(cartData);
-    }
-}
+    });
 
 
-    addToCartBtn.addEventListener('click', e => {     
-        if (amount > 0) { 
-            addToCart(product); 
-        }
-        emptyCartMessage();
-    })  
-
-
-    function increaseCount() {
-        count += 1; 
-        quantityValue.innerHTML = count;
-        updateTotalPrice();
+    function updateTotalPrice(cartData) {
+        let total = cartData.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        totalSumElement.innerHTML = `$${total}`;
     }
     
-    function increaseAmount() { 
-        amount += 1; 
-        amountToAdd.innerHTML = amount; 
-    }
-
-    function updateTotalIndicator() {
-       if (count > 0) { 
-        totalIndicator.innerHTML = count; 
-       } else { 
-        totalIndicator.innerHTML = 0;
-       }
-    }
+    function updateIframeCart() {
+        const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+        const itemContainer = iframeDocument.querySelector('.items_container');
+        const nilMessage = iframeDocument.querySelector('.nil');
+        const totalSumElement = iframeDocument.querySelector('.total_price');
 
         if (cartData.length === 0) {
             nilMessage.classList.remove('is_hidden');
+            itemContainer.classList.add('is_hidden');
         } else {
             nilMessage.classList.add('is_hidden');
+            itemContainer.classList.remove('is_hidden');
             itemContainer.innerHTML = '';
+
             cartData.forEach(item => {
                 let itemElement = document.createElement('div');
                 itemElement.classList.add('items');
@@ -274,24 +135,164 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
                 itemContainer.appendChild(itemElement);
             });
-            updateTotalPrice(cartData);
+
+            updateTotalPrice(cartData, totalSumElement);
         }
     }
 
-    addToCartBtn.addEventListener('click', e => {
-        if (amount > 0) {
-            addToCart(product);
-        }
-    });
 
-    displayCartItems();
+
+    iframe.onload = () => {
+        // Accessing the iframe document
+        updateIframeCart();
+
+        if (closeCart) {
+            closeCart.addEventListener('click', e => {
+                cartOverlay.style.width = '0px';
+                document.querySelector('.productInfo_container').style.opacity = '1';
+            });
+        }
+    };
+    console.log(cartData)
+
+    // // Product specific
+    // const addToCartBtn = document.querySelector('.add_to_cart');
+
+    // const amountToAdd = document.querySelector('.amount_to_add');
+    // let amount = parseInt(amountToAdd.innerText);
+  
+
+    // let productName = document.querySelector('.product_name').innerText;
+    // let productImage = document.querySelector('.product_grid img').src;
+    // let productPrice = getPrice(productName);
+    // let product = {
+    //     name: productName,
+    //     price: productPrice,
+    //     quantity: amount,
+    //     image: productImage
+    // };
+
+    // function getPrice(productName) {
+    //     let priceMapping = {
+    //         'CELTS - HIGHLAND EDITION': 2000,
+    //         'BEAST': 2000,
+    //         'ORBLIVION': 3000
+    //     };
+    //     for (let key in priceMapping) {
+    //         if (productName.includes(key)) {
+    //             return priceMapping[key];
+    //         }
+    //     }
+    //     return 0;
+    // }
+
+    // function saveCartToSessionStorage() {
+    //     cartData.push(product);
+    //     sessionStorage.setItem('cart', JSON.stringify(cartData));
+    // }
+
+    // function addToCart(product) {
+    //     saveCartToSessionStorage(product);
+    //     cartOverlay.style.width = '500px';
+    //     document.querySelector('.productInfo_container').style.opacity = '0.2';
+    //     displayCartItems();
+    // }
+
+ 
+    // //adding or decreasing amount
+    // const increaseAmount = document.querySelector('.increase');
+    // const decreaseAmount = document.querySelector('.decrease');
+
+    // increaseAmount.addEventListener('click', e => {
+    //     amount += 1;
+    //     amountToAdd.innerHTML = amount;
+    // });
+
+    // decreaseAmount.addEventListener('click', e => {
+    //     if (amount > 0) {
+    //         amount -= 1;
+    //         amountToAdd.innerHTML = amount;
+    //     }
+    // });
+
+    // addToCartBtn.addEventListener('click', e=> { 
+    //     addToCart();
+    // })
+
+
+
+    // //nav
+    // function openNav() {
+    //     document.getElementById("mySideNav").style.width = "350px";
+    // }
+
+    // function closeNav() {
+    //     document.getElementById("mySideNav").style.width = "0";
+    // }
+    // console.log(amount)
 });
 
 
 
 
 
+//     addToCartBtn.addEventListener('click', e => {     
+//         if (amount > 0) { 
+//             addToCart(product); 
+//         }
+//         emptyCartMessage();
+//     })  
 
+
+//     function increaseCount() {
+//         count += 1; 
+//         quantityValue.innerHTML = count;
+//         updateTotalPrice();
+//     }
+    
+//     function increaseAmount() { 
+//         amount += 1; 
+//         amountToAdd.innerHTML = amount; 
+//     }
+
+//     function updateTotalIndicator() {
+//        if (count > 0) { 
+//         totalIndicator.innerHTML = count; 
+//        } else { 
+//         totalIndicator.innerHTML = 0;
+//        }
+//     }
+
+//     if (cartData.length === 0) {
+//         nilMessage.classList.remove('is_hidden');
+//     } else {
+//         nilMessage.classList.add('is_hidden');
+//         itemContainer.innerHTML = '';
+//         cartData.forEach(item => {
+//             let itemElement = document.createElement('div');
+//             itemElement.classList.add('items');
+//             itemElement.innerHTML = `
+//                 <img src="${item.image}" alt="${item.name}">
+//                 <div class="details">
+//                     <div class="name">${item.name}</div>
+//                     <div class="price">$${item.price} / ${item.quantity}</div>
+//                 </div>
+//                 <div class="quantity">
+//                     <button class="decrease_value">-</button>
+//                     <span class="quantity_value">${item.quantity}</span>
+//                     <button class="increase_value">+</button>
+//                 </div>
+//             `;
+//             itemContainer.appendChild(itemElement);
+//         });
+//         updateTotalPrice(cartData);
+//     }
+    
+
+   
+
+//     displayCartItems();
+// });
 
     // function emptyCartMessage() { 
     //     if (count > 0) { 
@@ -335,10 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
     //     const totalSumElement = document.querySelector('.total_price');
     
     //   
-    //     function updateTotalPrice(cartData) {
-    //         let total = cartData.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    //         totalSumElement.innerText = `$${total}`;
-    //     }
+    //    
     
     //   
     
@@ -360,9 +358,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // displayCartItems(); 
 
     
-    increaseValue.addEventListener('click', e => { 
-        increaseCount();
-    });
+    // increaseValue.addEventListener('click', e => { 
+    //     increaseCount();
+    // });
     
   
     
@@ -390,13 +388,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // updateTotalIndicator();
     // emptyCartMessage(); 
 
- 
-
-function openNav() {
-    document.getElementById("mySideNav").style.width = "350px";
-}
-
-function closeNav() {
-    document.getElementById("mySideNav").style.width = "0";
-}
 
