@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>Check out</title>
+</head>
+<body>
+
+     <!-- Making the menu sidebar -->
+     <div id="mySideNav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="menu_align">
+            <img src="Icons/icons8-people-48.png">
+            <a href="#"><h3>ABOUT US</h3></a>
+        </div>
+        <div class="menu_align">
+            <img src="Icons/icons8-pinball-50.png">
+            <a href="Products.html"><h3>PRODUCTS</h3></a>
+        </div>
+        <div class="menu_align">
+            <img src="Icons/icons8-world-50.png">
+            <a href="#"><h3>DISTRIBUTORS</h3></a>
+        </div>
+        <div class="menu_align">
+            <img src="Icons/icons8-email-50.png">
+            <a href="#"><h3>CONTACT US</h3></a>
+        </div>
+    </div>
+
+    <nav class="checkout_nav">
+        <h1>CHECK OUT</h1>
+        <ul class="nav_ul">
+            <li class="back_btn"><h2><a href="index.html">BACK</a></h2></li>
+            <li><img class="menu_btn" src="https://www.pngkey.com/png/full/332-3321462_mobile-menu-for-barefoot-resort-vacations-hamburger-menu.png" onclick="openNav()"></li>
+        </ul>
+    </nav>
+    <div class="checkout_page">
+        <div class="checkout_items_total">0 Item(s)</div>
+
+        <div class="checkout_splitView">
+
+            <div class="checkout_overview">
+                <div class="checkout_list">
+                    <!-- items from cart goes here -->
+                </div>
+                <div class="checkout_calc">
+                    <div class="checkout_subtotal">SUBTOTAL
+                        <div class="subtotal_amount">$0</div>
+                    </div>
+                    <div class="checkout_tax">TAX (10%)
+                        <div class="tax_amount">$0</div>
+                    </div>
+                </div>
+                <div class="checkout_final_amount">
+                    <div class="total">TOTAL
+                        <div class="total_amount">$0</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="checkout_form">
+                <form action="/submit_form" method="post">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="fname" name="firstname" required placeholder=" ">
+                            <label for="fname">FIRST NAME</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="lname" name="lastname" required placeholder=" ">
+                            <label for="lname">LAST NAME</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" required placeholder=" ">
+                        <label for="email">EMAIL</label>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" id="address" name="address" required placeholder=" ">
+                        <label for="address">ADDRESS</label>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="country" name="country" required placeholder=" ">
+                            <label for="country">COUNTRY</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" required placeholder=" ">
+                            <label for="phone">PHONE</label>
+                        </div>
+                    </div>
+
+                    <input type="submit" value="SUBMIT">
+                </form>
+            </div>
+       
+        </div>
+
+
+    </div>
+
+
+
+
+</body>
+</html>

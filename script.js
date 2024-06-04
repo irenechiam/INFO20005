@@ -223,10 +223,7 @@ function loadSessionStorage() {
 
     //nav
     function openNav() {
-        const mySideNav = document.getElementById('mySideNav')
-        mySideNav.addEventListener('click', e=>{ 
-            mySideNav.style.width = "350px";
-        })
+        document.getElementById("mySideNav").style.width = "350px";
     }
 
     function closeNav() {

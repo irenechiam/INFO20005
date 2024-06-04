@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <title>Product Info</title>
 </head>
 <body>
@@ -92,7 +92,9 @@
                 <span class="total_price">$0</span>
             </div>
             <div class="buttons">
-                <div class="checkout_button">CHECK OUT</div>
+                <a href="checkout.html">
+                    <div class="checkout_button">CHECK OUT</div>
+                </a>
             </div>
         </div>
 
@@ -102,8 +104,16 @@
     </footer>
 
 
+    <script>
+        function openNav() {
+            document.getElementById("mySideNav").style.width = "350px";
+        }
 
+        function closeNav() {
+            document.getElementById("mySideNav").style.width = "0";
+        }
+    </script>
     
-    <script src="script.js"></script>
+
 </body>
 </html>
