@@ -284,25 +284,23 @@ document.addEventListener('DOMContentLoaded', () => {
     })
           
         
-
-
-
-
-
-
-
-
+      
+        
+        // Initial total price update
+        updateTotalPrice();
+        updateTotalIndicator();
+    
+        document.addEventListener('DOMContentLoaded', loadSessionStorage);
     });
 
-    //nav
-    function openNav() {
-        document.getElementById("mySideNav").style.width = "350px";
-    }
+//nav
+function openNav() {
+    document.getElementById("mySideNav").style.width = "350px";
+}
 
-    function closeNav() {
-        document.getElementById("mySideNav").style.width = "0";
-    }
+function closeNav() {
+    document.getElementById("mySideNav").style.width = "0";
+}
 
-   
 
 

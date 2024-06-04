@@ -18,10 +18,24 @@
     <hr>
     <h1 class="payment_title">PAYMENT METHOD</h1>
     <section class="payment">
-        <input class="card_name" type="text" placeholder="CARDHOLDER'S NAME">
-        <input class="card_number" type="number" placeholder="CARD NUMBER">
-        <input class="checkout_date" type="text" placeholder="DD/MM/YYYY">
-        <input class="cvc" type="password" placeholder="CVC">
+        <div class="form-group">
+            <input type="text" id="cardName" name="cardholderName" required placeholder=" ">
+            <label for="cardName">CARDHOLDER'S NAME</label>
+        </div>
+        <div class="form-group">
+            <input type="number" id="cardNum" name="cardNum" required placeholder=" ">
+            <label for="cardNum">CARD NUMBER</label>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <input type="text" id="date" name="expirationDate" required placeholder=" ">
+                <label for="date">DD/MM/YYYY</label>
+            </div>
+            <div class="form-group">
+                <input type="text" id="cvc" name="CVC" required placeholder=" ">
+                <label for="cvc">CVC</label>
+            </div>
+        </div>
     </section>
 
     
