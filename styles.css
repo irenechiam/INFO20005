@@ -258,7 +258,7 @@ a {
     margin: auto;
 }
 
-.product_name { 
+.celts_name .beast_name .orblivion_name { 
     position: absolute;
     text-align: center;
 }
@@ -851,27 +851,10 @@ input:focus {
     background-image: radial-gradient(closest-side, rgba(66, 135, 245,0.2), transparent);
 }
 
-.cart_overlay { 
-    position: fixed;
-    top: 0; 
-    right:0;
-    width: 0;
-    height: 100vh;
-    overflow: hidden;
-    transition: width 0.5s;
-    background-color: black;
-    z-index: 1000;
-}
 
-.cart_iframe {
-    width: 500px;
-    height: 100%;
-    border: none;
-    background-color: black;
-}
 .cart { 
     height: 100vh;
-    width: 500px; 
+    width: 0px; 
     position: fixed;
     top: 0;
     right: 0;
